@@ -7,8 +7,15 @@ ORDER BY 3,4
 
 SELECT *
 FROM CovidDeaths
-WHERE continent IS NOT NULL
+WHERE continent IS  NULL
 ORDER BY 3,4
+
+SELECT DISTINCT(CONTINENT)
+FROM CovidDeaths
+
+SELECT DISTINCT(LOCATION)
+FROM CovidDeaths
+WHERE LOCATION LIKE 'Int%'
 
 --SELECT *
 --FROM CovidVaccination
@@ -53,11 +60,7 @@ WHERE continent IS NOT NULL
 GROUP BY location
 ORDER BY 2 DESC;
 
--- Number of Total Deaths by Continents
+-- GLOBAL NUMBERS
 
-SELECT continent, SUM(CAST(total_deaths AS INT)) as Total_Deaths
-FROM CovidDeaths
-WHERE continent IS NOT NULL
-GROUP BY continent
-ORDER BY 2 DESC;
+
 
